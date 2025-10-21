@@ -41,8 +41,7 @@ public class PlayerController : MonoBehaviour {
 
 		r2d.linearVelocity = new Vector2(move*maxSpeed, r2d.linearVelocity.y);
 
-		if(move > 0 && !facingRight)
-			Flip();
+		if(move > 0 && !facingRight)			Flip();
 		else if( move < 0 && facingRight )
 			Flip();
 	}
