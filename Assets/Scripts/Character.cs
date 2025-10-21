@@ -12,7 +12,7 @@ public class Character : MonoBehaviour
     }
 
     protected Animator anim;
-    protected Rigidbody rb;
+    protected Rigidbody2D rb;
 
     //initialize variable
     public void Intialize(int StarHealth)
@@ -20,7 +20,7 @@ public class Character : MonoBehaviour
         Health = StarHealth;
         Debug.Log($"{this.name} is initializd Halth : {this.Health}");
 
-        rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
