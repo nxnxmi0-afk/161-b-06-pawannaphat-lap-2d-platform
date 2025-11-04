@@ -10,15 +10,18 @@ public class Rock : Weapon
         rb.AddForce(force);
     }
 
-    public override void OnHitWith(Character character)
+    public override void OnHitWith(Character  character)
     {
-        throw new System.NotImplementedException();
+        if (character is Player)
+            character.TakeDamage(this.damage);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        damage = 40;
+        force = new Vector2(GetShootDirection() * 90, 400);
+        Move();
     }
 
     // Update is called once per frame
