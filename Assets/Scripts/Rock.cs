@@ -10,10 +10,10 @@ public class Rock : Weapon
         rb.AddForce(force);
     }
 
-    public override void OnHitWith(Character  character)
+    public override void OnHitWith(Character  obk)
     {
-        if (character is Player)
-            character.TakeDamage(this.damage);
+        if (obk is Player)
+            obk.TakeDamage(this.damage);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
