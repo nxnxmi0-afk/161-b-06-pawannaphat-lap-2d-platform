@@ -1,33 +1,28 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class HealthBar : Character
 {
-    [SerializeField] private Slider slider;                 // ลาก Slider มาวางใน Inspector
-    [SerializeField] private Vector3 localOffset = new(0f, 1.2f, 0f);
-
-    // ให้ Character เรียกตอนสร้าง
-    public void AttachTo(Transform target, Vector3? overrideOffset = null)
+    public int MaxHealth = 100;
+    public int CurHealth;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        transform.SetParent(target, false);
-        transform.localPosition = overrideOffset ?? localOffset;
-        transform.localRotation = Quaternion.identity;
-        transform.localScale = Vector3.one;
+        CurHealth = MaxHealth;
     }
 
-    public void SetMax(float max)
+    // Update is called once per frame
+    void Update()
     {
-        if (slider == null) return;
-        slider.minValue = 0f;
-        slider.maxValue = max;
-        slider.value = max;
+        if (Input.GetKeyUp(KeyCode.K))
+        {
+            TakeDamage(20);
+        }
     }
 
-    public void SetValue(float value)
-    {
-        if (slider == null) return;
-        slider.value = Mathf.Clamp(value, slider.minValue, slider.maxValue);
-    }
+
+
+
+
 }
-
 

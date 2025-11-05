@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+
     // attributes
     private int health;
 
