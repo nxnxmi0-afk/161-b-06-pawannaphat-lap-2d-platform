@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class Character : MonoBehaviour
 {
     // attributes
@@ -7,11 +8,11 @@ public class Character : MonoBehaviour
 
     public int Health
     {
-        get {return health;}
+        get { return health; }
         set { health = (value < 0) ? 0 : value; }
     }
 
-    protected Animator anim;    
+    protected Animator anim;
     protected Rigidbody2D rb;
 
     //initialize variable
@@ -29,7 +30,8 @@ public class Character : MonoBehaviour
     {
         Health -= damage;
         Debug.Log($"{this.name} took damage {damage} Current Health {Health}");
-        
+
+        IsDead();
 
     }
 
@@ -50,6 +52,5 @@ public class Character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

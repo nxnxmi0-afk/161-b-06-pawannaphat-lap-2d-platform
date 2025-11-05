@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Player : Character , IShootable
+public class Player : Character, IShootable
 {
     [field: SerializeField] public GameObject Bullet { get; set; }
     [field: SerializeField] public Transform ShootPoint { get; set; }
@@ -10,7 +10,7 @@ public class Player : Character , IShootable
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        base.Intialize(100);
+        base.Intialize(150);
         ReloadTime = -5.0f;
         WaitTime = 0.0f;
     }
@@ -31,7 +31,7 @@ public class Player : Character , IShootable
     }
     private void OnCollisionEnter2D(Collision2D Other)
     {
-       Enemy enemy = Other.gameObject.GetComponent<Enemy>();
+        Enemy enemy = Other.gameObject.GetComponent<Enemy>();
         if (enemy != null)
         {
             OnHitWith(enemy);
