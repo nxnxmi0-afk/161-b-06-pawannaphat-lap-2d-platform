@@ -11,7 +11,7 @@ public class Character : MonoBehaviour
         set { health = (value < 0) ? 0 : value; }
     }
 
-    protected Animator anim;
+    protected Animator anim;    
     protected Rigidbody2D rb;
 
     //initialize variable
@@ -29,6 +29,8 @@ public class Character : MonoBehaviour
     {
         Health -= damage;
         Debug.Log($"{this.name} took damage {damage} Current Health {Health}");
+        
+
     }
 
 
